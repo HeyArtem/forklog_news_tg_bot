@@ -102,21 +102,24 @@ def get_fresh_data(path='forklog_news/all_cards.json'):
             # url
             item_url = card.find('a').get('href')
         
-            # новый title & url заношу в новый словарь
-            all_fresh_cards_dict[item_title] = item_url # Макс где здесь отступ????????????????????
-            
-            # также в старый словарь заношу новые данные (старые + дозаписал новые)
-            src[item_title] = item_url
-            
-        # новый словарь записал в новый json
-        with open(file='forklog_news/all_fresh_cards.json', mode='w') as file:
-            json.dump(all_fresh_cards_dict, file, indent=4, ensure_ascii=False)
-            
-        # старый словарь (+ с новыми данными) перезаписал в старый json
-        with open(file='forklog_news/all_cards.json', mode='w') as file:
-            json.dump(src, file, indent=4, ensure_ascii=False)
-            
-        return all_fresh_cards_dict
+        # новый title & url заношу в новый словарь
+        all_fresh_cards_dict[item_title] = item_url # Макс где здесь отступ????????????????????
+
+        # также в старый словарь заношу новые данные (старые + дозаписал новые)
+        src[item_title] = item_url
+         
+    print('Start rec')    
+    # новый словарь записал в новый json
+    with open(file='forklog_news/all_fresh_cards.json', mode='w') as file:
+        json.dump(all_fresh_cards_dict, file, indent=4, ensure_ascii=False)
+        
+    # старый словарь (+ с новыми данными) перезаписал в старый json
+    with open(file='forklog_news/all_cards.json', mode='w') as file:
+        json.dump(src, file, indent=4, ensure_ascii=False)
+
+    print(all_fresh_cards_dict)
+    return all_fresh_cards_dict
+    
 
 
 # def main():
