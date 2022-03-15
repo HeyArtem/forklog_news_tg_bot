@@ -10,7 +10,7 @@ dp = Dispatcher(bot=bot)
 # тест
 async def trial_trip():
     name = 'Hello from Mihal Ivanicha!'
-    await bot.send_message('564764469', name, disable_notification=True)
+    await bot.send_message('---ВПИШИ СВОЙ ID ---', name, disable_notification=True)
     
     
 # вызов функции проверяющей свежие статьи
@@ -25,7 +25,7 @@ async def sending_massage():
             await bot.send_message('---ВПИШИ СВОЙ ID ---', finifed_message, disable_notification=True)
             
     else:
-        await bot.send_message('564764469', 'No fresh news!!!', disable_notification=True)
+        await bot.send_message('---ВПИШИ СВОЙ ID ---', 'No fresh news!!!', disable_notification=True)
     
 
 async def scheduler():
