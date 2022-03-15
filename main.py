@@ -103,7 +103,7 @@ def get_fresh_data(path='forklog_news/all_cards.json'):
             item_url = card.find('a').get('href')
         
         # новый title & url заношу в новый словарь
-        all_fresh_cards_dict[item_title] = item_url # Макс где здесь отступ????????????????????
+        all_fresh_cards_dict[item_title] = item_url 
 
         # также в старый словарь заношу новые данные (старые + дозаписал новые)
         src[item_title] = item_url
@@ -119,13 +119,13 @@ def get_fresh_data(path='forklog_news/all_cards.json'):
 
     print(all_fresh_cards_dict)
     return all_fresh_cards_dict
-    
 
 
-# def main():
-#     # get_data()
-#     get_fresh_data()
+
+def main():
+    # get_data()
+    get_fresh_data()
 
 
-# if __name__ == '__main__':
-#     main()
+if __name__ == '__main__':
+    main()
